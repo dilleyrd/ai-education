@@ -1,5 +1,5 @@
 /**
- * AI Academy — server
+ * AI Roadmap — server
  *
  * Serves the static frontend, the curriculum API, and proxies all
  * generative/agentic AI features to Gemini 2.5 Flash via OpenRouter
@@ -163,6 +163,7 @@ app.get('/api/curriculum', (req, res) => {
       level: m.level,
       duration: m.duration,
       tagline: m.tagline,
+      stage: m.stage || null,
       courseCount: m.courses.length,
       lessonCount: m.courses.reduce((n, c) => n + c.lessons.length, 0),
     }))
@@ -204,7 +205,7 @@ async function callModel(messages, { temperature = 0.7, json = false, model = MO
       Authorization: `Bearer ${API_KEY}`,
       'Content-Type': 'application/json',
       'HTTP-Referer': 'http://localhost:' + PORT,
-      'X-Title': 'AI Academy',
+      'X-Title': 'AI Roadmap',
     },
     body: JSON.stringify(body),
   });
@@ -300,7 +301,7 @@ app.post('/api/ai/tutor', async (req, res) => {
   const { moduleId, courseIndex, messages = [] } = req.body;
 
   const system = [
-    'You are the AI Academy Tutor, an expert instructor on applied AI for business and engineering.',
+    'You are the AI Roadmap Tutor, an expert instructor on applied AI for business and engineering.',
     `Today's date is ${new Date().toISOString().slice(0, 10)}; AI moves fast, so prefer the most`,
     'current tools and examples you know, date your claims, and tell the learner when something',
     'is changing quickly enough that they should re-verify it.',
@@ -319,7 +320,7 @@ app.post('/api/ai/tutor', async (req, res) => {
         Authorization: `Bearer ${API_KEY}`,
         'Content-Type': 'application/json',
         'HTTP-Referer': 'http://localhost:' + PORT,
-        'X-Title': 'AI Academy',
+        'X-Title': 'AI Roadmap',
       },
       body: JSON.stringify({
         model: pickModel(req.body),
@@ -448,7 +449,7 @@ app.post('/api/ai/lecture', async (req, res) => {
 
   const today = new Date().toISOString().slice(0, 10);
   const system = [
-    `You are a subject-matter expert at AI Academy presenting a professional briefing to one`,
+    `You are a subject-matter expert at AI Roadmap presenting a professional briefing to one`,
     `practitioner. Your register is that of a polished conference speaker or technical keynote —`,
     `authoritative, direct, and engaging, but NOT a schoolteacher addressing a classroom.`,
     `Do NOT open with classroom theatrics ("Okay class, take your seats", "Welcome back, everyone",`,
@@ -498,7 +499,7 @@ app.post('/api/ai/lecture', async (req, res) => {
         Authorization: `Bearer ${API_KEY}`,
         'Content-Type': 'application/json',
         'HTTP-Referer': 'http://localhost:' + PORT,
-        'X-Title': 'AI Academy',
+        'X-Title': 'AI Roadmap',
       },
       body: JSON.stringify({
         model: pickModel(req.body),
@@ -575,7 +576,7 @@ app.post('/api/ai/speak', async (req, res) => {
         Authorization: `Bearer ${API_KEY}`,
         'Content-Type': 'application/json',
         'HTTP-Referer': 'http://localhost:' + PORT,
-        'X-Title': 'AI Academy',
+        'X-Title': 'AI Roadmap',
       },
       body: JSON.stringify({
         model: TTS_MODEL,
@@ -647,7 +648,7 @@ app.post('/api/ai/audit', async (req, res) => {
   };
 
   const prompt = [
-    `You are the curriculum steward for AI Academy. Today's date is ${new Date().toISOString().slice(0, 10)}.`,
+    `You are the curriculum steward for AI Roadmap. Today's date is ${new Date().toISOString().slice(0, 10)}.`,
     `Audit the module below: is its structure still valid given the CURRENT state of AI technology?`,
     `Judge against the live web search results provided and your most recent knowledge. Look for:`,
     `- courses or lessons whose framing is dated (the field has moved past it),`,
@@ -688,15 +689,15 @@ app.post('/api/ai/audit', async (req, res) => {
 });
 
 /* ------------------------------------------------------------------ */
-/* Use-Case Advisor — agentic multi-step pipeline                      */
+/* Opportunity Advisor — agentic multi-step pipeline                   */
 /*                                                                     */
 /* Step 1  PROFILE   — analyze the learner's role and decompose it     */
-/*                     into discrete tasks (Use Case Model).           */
+/*                     into discrete tasks (task-based method).        */
 /* Step 2  SCORE     — rate each task for AI value & ability, identify */
-/*                     problems worth solving (Problem-Based Model).   */
-/* Step 3  ROADMAP   — synthesize a prioritized pilot roadmap with     */
-/*                     Quick Wins / Sweetspots / Moonshots, tools, and */
-/*                     a recommended Academy learning path.            */
+/*                     problems worth solving (problem-first method).  */
+/* Step 3  ROADMAP   — synthesize a prioritized pilot plan with        */
+/*                     Quick Wins / Strategic Bets / Moonshots, tools, */
+/*                     and a recommended learning path.                */
 /* ------------------------------------------------------------------ */
 
 app.post('/api/ai/advisor', async (req, res) => {
@@ -722,7 +723,7 @@ app.post('/api/ai/advisor', async (req, res) => {
         {
           role: 'user',
           content:
-            `Using the SmarterX-style Use Case Model, decompose this professional's job into 8-12 discrete, ` +
+            `Using a task-decomposition method, decompose this professional's job into 8-12 discrete, ` +
             `concrete tasks. Return ONLY JSON: {"tasks":[{"task":"...","timeShare":"e.g. 15%"}]}\n\n` +
             `ROLE: ${role}\nINDUSTRY: ${industry}\nSELF-DESCRIBED ACTIVITIES: ${tasks || 'not provided'}`,
         },
@@ -739,7 +740,7 @@ app.post('/api/ai/advisor', async (req, res) => {
         {
           role: 'user',
           content:
-            `Score each task for AI exposure. value = business value of automating/augmenting it with AI (1-5), ` +
+            `Score each task for AI opportunity. value = business value of automating/augmenting it with AI (1-5), ` +
             `ability = how capable today's AI (LLMs, agents, prediction models) is at the task (1-5). ` +
             `Also identify the 2-3 biggest PROBLEMS implied by the stated challenges. Return ONLY JSON:\n` +
             `{"scored":[{"task":"...","value":1,"ability":1,"note":"one line"}],` +
@@ -760,11 +761,11 @@ app.post('/api/ai/advisor', async (req, res) => {
         {
           role: 'user',
           content:
-            `Build an AI pilot roadmap from the scored tasks and problems below. Classify pilots as ` +
-            `"quickWin" (high ability, immediate), "sweetspot" (high value + high ability), or "moonshot" ` +
+            `Build an AI pilot plan from the scored tasks and problems below. Classify pilots as ` +
+            `"quickWin" (high ability, immediate), "strategicBet" (high value + high ability), or "moonshot" ` +
             `(high value, emerging ability). Recommend specific, real, current tools/vendors per pilot. ` +
-            `Then pick the 3 most relevant Academy modules from the catalog (use their ids). Return ONLY JSON:\n` +
-            `{"pilots":[{"name":"...","type":"quickWin|sweetspot|moonshot","detail":"2 sentences","tools":["..."],"firstStep":"one concrete action"}],` +
+            `Then pick the 3 most relevant modules from the catalog (use their ids). Return ONLY JSON:\n` +
+            `{"pilots":[{"name":"...","type":"quickWin|strategicBet|moonshot","detail":"2 sentences","tools":["..."],"firstStep":"one concrete action"}],` +
             `"learningPath":[{"id":"module-id","reason":"one line"}],"summary":"3-sentence executive summary"}\n\n` +
             `SCORED TASKS: ${JSON.stringify(scored.scored)}\nPROBLEMS: ${JSON.stringify(scored.problems)}\n` +
             `ROLE: ${role} | INDUSTRY: ${industry}\n\nACADEMY CATALOG:\n${catalogSummary}`,
@@ -784,6 +785,6 @@ app.post('/api/ai/advisor', async (req, res) => {
 /* ------------------------------------------------------------------ */
 
 app.listen(PORT, () => {
-  console.log(`AI Academy running at http://localhost:${PORT}`);
+  console.log(`AI Roadmap running at http://localhost:${PORT}`);
   console.log(`Model: ${MODEL} via OpenRouter ${API_KEY ? '(key configured)' : '(NO KEY — AI features disabled)'}`);
 });

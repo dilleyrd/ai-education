@@ -1,8 +1,9 @@
-# AI Academy
+# AI Roadmap
 
 Training, education, and real-world implementation guidance for AI applications —
-**19 certificate modules** across three tracks, with a live AI tutor, on-demand knowledge
-checks, and an agentic use-case advisor powered by **Gemini 2.5 Flash via OpenRouter**.
+**19 modules** across three tracks, with interactive AI lectures, a live AI tutor, on-demand
+knowledge checks, and an agentic opportunity advisor powered by **selectable Gemini models
+via OpenRouter**.
 
 ## Quick start
 
@@ -31,30 +32,30 @@ validates it against the allowlist in `server.js` and falls back to
 
 ## The curriculum
 
-**Core track (01–03)** — modeled on the SmarterX AI Academy certificate series:
+**Core curriculum (01–03)** — a three-stage practitioner path, taken in order:
 
-| № | Module | Structure |
-|---|--------|-----------|
-| 01 | AI Fundamentals | 8 courses, 6 h — literacy: concepts, state of AI, GenAI, prompting, agents |
-| 02 | Piloting AI | 4 courses, 3 h — Use Case Model, Problem-Based Model, 30-90 Rule, custom assistants |
-| 03 | Scaling AI | 7 courses, 5 h — AI-Forward org, academy, council, policy, responsible AI, roadmap |
+| № | Stage | Module | Structure |
+|---|-------|--------|-----------|
+| 01 | Learn | AI Essentials | 8 courses, 6 h — literacy: concepts, current state, generative AI, prompting, agents |
+| 02 | Build | Building AI Solutions | 4 courses, 3 h — task-based & problem-first methods, time-boxed pilots, custom assistants |
+| 03 | Lead | Enterprise AI Strategy | 7 courses, 5 h — AI-ready culture, education, governance, policy, responsible AI, strategic plan |
 
 **Industry track (04–14)** — eleven modules (Manufacturing, Operations, Finance,
-Customer Success, Sales, Marketing, HR, Legal, Software & Technology, Retail & CPG,
-Healthcare), each following the four-course certificate arc: *State of AI → Future of X →
-Find Your AI Advantage → Applied AI*, plus a final exam. Every course cites current
-real-world implementations (Intercom Fin, Harvey, GitHub Copilot, Abridge, Augury, …).
+Customer Success, Sales, Marketing, People & HR, Legal, Software Engineering, Retail & CPG,
+Healthcare), each following the same four-course progression: *The Current Landscape →
+Emerging Operating Models → Mapping Opportunities → Implementation & Tooling*, plus a final
+assessment. Every course cites current real-world implementations (Intercom Fin, Harvey,
+GitHub Copilot, Abridge, Augury, …).
 
-**Engineering & Science track (15–19)** — the custom additions, same arc but deeper
-technical content:
+**Engineering & Science track (15–19)** — same progression, deeper technical content:
 
 | № | Module | Signature topics |
 |---|--------|------------------|
-| 15 | AI for Mechanical Engineering Design | Generative design (Autodesk/GM bracket), nTop, ML surrogates, CAD copilots |
-| 16 | AI for Engineering Thermal Analysis | Thermal surrogates, PINNs, DeepMind data-center cooling, PhysicsNeMo |
-| 17 | AI for Finite-Element Analysis | Neural operators (FNO/DeepONet), MeshGraphNets, Ansys SimAI, Altair physicsAI |
-| 18 | AI for Computational Fluid Dynamics | Flow-field surrogates, ML turbulence closures, Neural Concept, Luminary Cloud |
-| 19 | AI for Research Biology | AlphaFold, RFdiffusion/ProteinMPNN, single-cell foundation models, ColabFold |
+| 15 | Generative Mechanical Design | Generative design (Autodesk/GM bracket), nTop, ML surrogates, CAD copilots |
+| 16 | ML-Driven Thermal Analysis | Thermal surrogates, PINNs, DeepMind data-center cooling, PhysicsNeMo |
+| 17 | Neural Surrogates for Finite-Element Analysis | Neural operators (FNO/DeepONet), MeshGraphNets, Ansys SimAI, Altair physicsAI |
+| 18 | ML-Driven Computational Fluid Dynamics | Flow-field surrogates, ML turbulence closures, Neural Concept, Luminary Cloud |
+| 19 | Computational Research Biology | AlphaFold, RFdiffusion/ProteinMPNN, single-cell foundation models, ColabFold |
 
 ## Generative & agentic components
 
@@ -98,10 +99,10 @@ All run on [`google/gemini-2.5-flash`](https://openrouter.ai/google/gemini-2.5-f
   findings with per-item status (current / dated / obsolete) and suggested fixes,
   emerging topics the module should consider covering, and the sources checked against.
   Results are cached server-side for 24 h; "Re-verify now" forces a fresh audit.
-- **Use-Case Advisor** (`POST /api/ai/advisor`) — a three-step agentic pipeline:
+- **Opportunity Advisor** (`POST /api/ai/advisor`) — a three-step agentic pipeline:
   ① decompose the learner's role into tasks → ② score each for AI value × ability and
-  mine problems → ③ synthesize a Quick Win / Sweetspot / Moonshot pilot roadmap with
-  tool recommendations and a personalized Academy learning path. Progress streams to
+  mine problems → ③ synthesize a Quick Win / Strategic Bet / Moonshot pilot plan with
+  tool recommendations and a personalized learning path. Progress streams to
   the UI step by step.
 
 ## Learner profiles & progress tracking
@@ -135,7 +136,7 @@ data/
 public/
   index.html         Shell
   styles.css         Editorial paper-and-ink design system
-  app.js             Hash-routed SPA: catalog, module pages, tutor, quiz, advisor
+  app.js             Hash-routed SPA: catalog, module pages, lectures, tutor, quiz, advisor
 ```
 
 ## API
@@ -153,5 +154,5 @@ public/
 | `/api/ai/advisor` | POST | Run the agentic advisor (SSE progress) |
 
 The platform doubles as courseware: `server.js` is the worked example for the
-patterns taught in *AI Fundamentals C8* (agents), *Piloting AI C4* (custom
-assistants), and *AI for Software & Technology C4* (building AI features).
+patterns taught in *AI Essentials* (agents), *Building AI Solutions* (custom
+assistants), and *Software Engineering & AI* (building AI features).

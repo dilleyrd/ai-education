@@ -1,5 +1,5 @@
 /* ==================================================================
-   AI Academy — frontend application
+   AI Roadmap — frontend application
    Hash-routed SPA: catalog → module pages → AI tutor / quizzes /
    agentic use-case advisor (Gemini 2.5 Flash via OpenRouter, proxied
    by the Express server).
@@ -19,18 +19,18 @@ const modelShort = (id = MODEL_CHOICE) => id.replace(/^google\//, '');
 
 const TRACKS = {
   core: {
-    label: 'Core Track',
-    title: 'The Foundation Path',
-    desc: 'The sequence everything else builds on: literacy (Fundamentals), action (Piloting), and enterprise transformation (Scaling). Take these in order.',
+    label: 'Core Curriculum',
+    title: 'Learn · Build · Lead',
+    desc: 'Three progressive stages, taken in order: Learn the essentials, Build working solutions, then Lead organization-wide adoption.',
   },
   industry: {
     label: 'Industry Track',
-    title: 'AI for Your Function & Sector',
-    desc: 'Eleven applied modules following the certificate arc — the State of AI, the Future, Finding Your Advantage, and Applied implementation — each grounded in current real-world deployments.',
+    title: 'AI Across Functions & Sectors',
+    desc: 'Eleven applied modules, each following the same progression — current landscape, emerging operating models, opportunity mapping, and implementation — grounded in current real-world deployments.',
   },
   engineering: {
     label: 'Engineering & Science Track',
-    title: 'AI for Engineering & Research',
+    title: 'AI in Engineering & Research',
     desc: 'Five technical modules for practitioners: generative design, thermal analysis, FEA, CFD, and research biology — surrogate models, physics-informed ML, and the verification discipline that keeps them trustworthy.',
   },
 };
@@ -326,7 +326,7 @@ function renderCatalog() {
   <section class="hero">
     <div class="hero-kicker">Applied AI Curriculum — Catalog № 1</div>
     <h1>Learn AI. Then <em>ship it</em> where you work.</h1>
-    <p class="hero-sub">Nineteen certificate modules spanning business functions, industries, and hard engineering —
+    <p class="hero-sub">Nineteen modules spanning business functions, industries, and hard engineering —
     from first principles to production deployment. Every module pairs structured curriculum with a live AI tutor,
     generated knowledge checks, and an agentic advisor that maps AI to your actual job.</p>
     <div class="hero-stats">
@@ -335,7 +335,7 @@ function renderCatalog() {
       <div><b>3</b><span>Tracks</span></div>
       <div><b>∞</b><span>AI knowledge checks</span></div>
     </div>
-    <div class="hero-coords">FIG. 01 — CURRICULUM MAP<br/>SCALE: SELF-PACED<br/>ENGINE: GEMINI 2.5 FLASH / OPENROUTER</div>
+    <div class="hero-coords">FIG. 01 — CURRICULUM MAP<br/>SCALE: SELF-PACED<br/>ENGINE: GEMINI · OPENROUTER</div>
   </section>
   <section class="catalog">`;
 
@@ -356,7 +356,7 @@ function renderCatalog() {
         <a class="module-row" href="#/module/${m.id}">
           <span class="num">№ ${m.number}</span>
           <span>
-            <span class="m-title">${esc(m.title)}</span>
+            <span class="m-title">${m.stage ? `<span class="stage-chip">${esc(m.stage)}</span>` : ''}${esc(m.title)}</span>
             <div class="m-tagline">${esc(m.tagline)}</div>
             ${PROFILE && pct > 0 ? `<div class="row-prog" title="${pct}% of lectures attended"><i style="width:${pct}%"></i></div>` : ''}
           </span>
@@ -758,7 +758,7 @@ function openReader(mod, course, lesson, key) {
   const w = window.open('', '_blank');
   if (!w) { alert('Pop-up blocked — allow pop-ups for this site to use the reader.'); return; }
   w.document.write(`<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<title>${esc(lesson.title)} — AI Academy Reader</title>
+<title>${esc(lesson.title)} — AI Roadmap Reader</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
@@ -789,7 +789,7 @@ function openReader(mod, course, lesson, key) {
   .r-sources span { font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8a8878; }
   @media print { body { padding:0; font-size:12pt; } }
 </style></head><body><div class="page">
-<div class="crumb">AI Academy · Module ${esc(mod.number)} — ${esc(mod.title)} · ${esc(course.title)}</div>
+<div class="crumb">AI Roadmap · Module ${esc(mod.number)} — ${esc(mod.title)} · ${esc(course.title)}</div>
 <h1 class="title">${esc(lesson.title)}</h1>
 <p class="lede">${esc(lesson.detail)}</p>
 ${tmp.innerHTML}
@@ -1181,19 +1181,19 @@ async function sendTutor(mod) {
   }
 }
 
-/* ---------------- use-case advisor (agentic) ---------------- */
+/* ---------------- opportunity advisor (agentic) ---------------- */
 
 function renderAdvisor() {
   view.innerHTML = `
   <section class="advisor-page">
     <p class="mono-eyebrow" style="color:var(--signal); margin-bottom:14px;">Agentic component — three-step pipeline on ${esc(modelShort())}</p>
-    <h1>The Use-Case Advisor</h1>
-    <p class="lede">The Piloting AI methodology, run live by an agent: it decomposes your role into tasks,
-    scores each for AI <em>value</em> and <em>ability</em> (the AI Exposure Key), mines your stated challenges
-    for problems worth solving, and synthesizes a prioritized pilot roadmap — Quick Wins, Sweetspots,
-    Moonshots — with recommended tools and your Academy learning path.</p>
+    <h1>The Opportunity Advisor</h1>
+    <p class="lede">The Building AI Solutions method, run live by an agent: it decomposes your role into tasks,
+    scores each for AI <em>value</em> and <em>ability</em>, mines your stated challenges
+    for problems worth solving, and synthesizes a prioritized pilot plan — Quick Wins, Strategic Bets,
+    Moonshots — with recommended tools and your personalized learning path.</p>
 
-    ${AI_ENABLED ? '' : `<div class="notice">The advisor requires <code>google/gemini-2.5-flash</code> via OpenRouter.
+    ${AI_ENABLED ? '' : `<div class="notice">The advisor requires a Gemini model via OpenRouter.
       Add <code>OPENROUTER_API_KEY</code> to <code>.env</code> (see README) and restart the server.</div>`}
 
     <form class="advisor-form" id="advForm">
@@ -1305,7 +1305,7 @@ function handleAdvisorEvent(msg, { setStep, results }) {
   }
   if (event === 'roadmap') {
     setStep(3, 'done', 'done');
-    const typeLabel = { quickWin: 'Quick Win', sweetspot: 'Sweetspot', moonshot: 'Moonshot' };
+    const typeLabel = { quickWin: 'Quick Win', strategicBet: 'Strategic Bet', moonshot: 'Moonshot' };
     results.insertAdjacentHTML('beforeend', `
       <div class="adv-card">
         <h3>③ Your pilot roadmap</h3>
@@ -1320,7 +1320,7 @@ function handleAdvisorEvent(msg, { setStep, results }) {
           </div>`).join('')}
         </div>
         ${data.learningPath?.length ? `
-        <h3 style="margin-top:24px;">Your Academy learning path</h3>
+        <h3 style="margin-top:24px;">Your learning path</h3>
         ${data.learningPath.map((lp) => {
           const m = CATALOG.find((c) => c.id === lp.id);
           return m
@@ -1413,32 +1413,33 @@ function renderAbout() {
   view.innerHTML = `
   <section class="about-page">
     <p class="mono-eyebrow" style="margin-bottom:14px;">Method</p>
-    <h1>How this Academy works</h1>
-    <p>Every module follows a proven certificate arc, modeled on the SmarterX AI Academy series:
-    understand the <em>state</em> of AI in your field, see the <em>future</em> operating model, find your
-    <em>advantage</em> with the Use Case and Problem-Based models, then go <em>applied</em> — tools,
-    implementation, and a hands-on lab. The core track (Fundamentals → Piloting → Scaling) carries you from
-    literacy to enterprise transformation; the engineering track extends the same arc into surrogate modeling,
-    physics-informed ML, and verification discipline.</p>
+    <h1>How AI Roadmap works</h1>
+    <p>Every applied module follows the same original four-part progression: understand the
+    <em>current landscape</em> of AI in your field, see the <em>emerging operating models</em>, <em>map the
+    opportunities</em> with task-based and problem-first methods, then move to <em>implementation</em> — tools,
+    deployment, and a hands-on lab. The core curriculum runs Learn → Build → Lead (AI Essentials → Building AI
+    Solutions → Enterprise AI Strategy); the engineering track extends the same progression into surrogate
+    modeling, physics-informed ML, and verification discipline.</p>
 
     <h2>The generative layer</h2>
-    <p>Three AI components run on <code>google/gemini-2.5-flash</code> via OpenRouter
-    (1M-token context, reasoning-capable, priced for high-volume tutoring):</p>
+    <p>The AI features run on your choice of Gemini model via OpenRouter (long context, reasoning-capable,
+    priced for high-volume tutoring):</p>
     <ul>
+      <li><b>Interactive lectures</b> — web-grounded, streamed lessons with syntax-highlighted code, rendered math, citations, a reader window, and optional narration.</li>
       <li><b>AI Tutor</b> — a streaming chat grounded in the module and course you’re viewing via system-prompt context injection.</li>
       <li><b>Knowledge checks</b> — five-question applied quizzes generated on demand with structured JSON output, graded in the browser with explanations.</li>
-      <li><b>Use-Case Advisor</b> — an agentic three-step pipeline (decompose → score → synthesize) that produces your personal AI roadmap and learning path.</li>
+      <li><b>Opportunity Advisor</b> — an agentic three-step pipeline (decompose → score → synthesize) that produces your personal pilot plan and learning path.</li>
     </ul>
 
     <h2>The platform as courseware</h2>
     <p>The application itself is a teaching artifact. <code>server.js</code> demonstrates the patterns taught in
-    AI Fundamentals C8 (agents), Piloting AI C4 (custom assistants), and AI for Software &amp; Technology C4
+    AI Essentials (agents), Building AI Solutions (custom assistants), and Software Engineering &amp; AI
     (building AI features): server-side key handling, context grounding, streaming, structured outputs, and a
     multi-step agent loop. Read the source as the lab manual.</p>
 
-    <h2>Certification model</h2>
-    <p>Each module ends with a comprehensive exam (practice with the generated knowledge checks — 80% is the
-    pass bar per course). Industry modules take ~4 hours; the core track runs 3–6 hours per module.</p>
+    <h2>Completion model</h2>
+    <p>Each module ends with a comprehensive assessment (practice with the generated knowledge checks — 80% is the
+    pass bar per course). Industry modules take ~4 hours; the core curriculum runs 3–6 hours per module.</p>
   </section>`;
   window.scrollTo(0, 0);
 }

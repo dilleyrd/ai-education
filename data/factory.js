@@ -1,13 +1,12 @@
 /**
  * Shared module factory for the industry and engineering tracks.
  *
- * Every applied module follows the four-course certificate arc used by the
- * SmarterX AI Academy series:
- *   1. The State of AI for X      — where the field is today
- *   2. The Future of X            — how AI reshapes the operating model
- *   3. Find Your AI Advantage     — use-case and problem-based frameworks
- *   4. Applied AI for X           — tools, implementation, hands-on lab
- *   +  Final certification exam
+ * Every applied module follows the same original four-course progression:
+ *   1. The Current Landscape      — where the field is today
+ *   2. Emerging Operating Models  — how AI reshapes the way the work is done
+ *   3. Mapping Opportunities      — task-based and problem-first methods
+ *   4. Implementation & Tooling   — tools, deployment, hands-on lab
+ *   +  Final assessment
  */
 function makeModule({
   id,
@@ -40,32 +39,32 @@ function makeModule({
     outcomes,
     courses: [
       {
-        title: `The State of AI for ${name}`,
+        title: `${name}: The Current Landscape`,
         summary: state.summary,
         lessons: state.lessons,
         examples: state.examples || [],
       },
       {
-        title: `The Future of ${name}`,
+        title: `${name}: Emerging Operating Models`,
         summary: future.summary,
         lessons: future.lessons,
         examples: future.examples || [],
       },
       {
-        title: `Find Your AI Advantage in ${name}`,
+        title: `${name}: Mapping Opportunities`,
         summary: advantage.summary,
         lessons: advantage.lessons,
         examples: advantage.examples || [],
       },
       {
-        title: `Applied AI for ${name}`,
+        title: `${name}: Implementation & Tooling`,
         summary: applied.summary,
         lessons: applied.lessons,
         examples: applied.examples || [],
       },
     ],
     deliverables,
-    exam: 'Comprehensive final exam across all four courses; Professional Certificate awarded on passing. Generate AI knowledge checks in each course as practice.',
+    exam: 'Comprehensive final assessment across all four courses; completion certificate awarded on passing. Generate AI knowledge checks in each course as practice.',
   };
 }
 

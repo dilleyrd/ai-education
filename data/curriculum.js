@@ -1,9 +1,9 @@
 /**
  * Curriculum index — assembles all 19 modules across three tracks.
  *
- *   core         (01-03)  Fundamentals → Piloting → Scaling
+ *   core         (01-03)  Learn → Build → Lead (Essentials, Building, Strategy)
  *   industry     (04-14)  11 functional/sector modules
- *   engineering  (15-19)  5 engineering & science modules (custom additions)
+ *   engineering  (15-19)  5 engineering & science modules
  *
  * Each module is a structured object consumed by the API and frontend.
  */

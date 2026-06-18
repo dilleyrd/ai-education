@@ -2,9 +2,9 @@ const { makeModule } = require('./factory');
 
 module.exports = [
   makeModule({
-    id: 'ai-for-manufacturing',
+    id: 'manufacturing',
     number: '04',
-    title: 'AI for Manufacturing',
+    title: 'Manufacturing & Industrial AI',
     name: 'Manufacturing',
     track: 'industry',
     tagline: 'From reactive plants to self-optimizing production systems.',
@@ -19,7 +19,7 @@ module.exports = [
       'Map AI capability to the core manufacturing value drivers: OEE, quality, throughput, downtime',
       'Evaluate predictive maintenance and machine-vision solutions against your line data',
       'Build a prioritized plant-level AI roadmap using the Use Case and Problem-Based models',
-      'Select tools across the Three Tiers of AI Technology and plan a 30-90 pilot',
+      'Select tools across embedded, point-solution, and custom-build tiers and plan a time-boxed pilot',
     ],
     state: {
       summary:
@@ -49,24 +49,24 @@ module.exports = [
     },
     advantage: {
       summary:
-        'Hands-on identification of AI opportunities in your plant using the Use Case Model and Problem-Based Model, ending in an actionable roadmap.',
+        'Hands-on identification of AI opportunities in your plant using task-based and problem-first methods, ending in an actionable roadmap.',
       lessons: [
-        { title: 'Task mining the plant floor', detail: 'Decompose roles — quality tech, planner, maintenance lead — into tasks and score AI exposure.' },
+        { title: 'Task mining the plant floor', detail: 'Decompose roles — quality tech, planner, maintenance lead — into tasks and score AI opportunity.' },
         { title: 'Problem-first candidates', detail: 'Unplanned downtime, scrap rate, changeover time: quantify cost, then match AI capability.' },
-        { title: 'Your plant AI roadmap', detail: 'Sequence Quick Wins (vision QC), Sweetspots (predictive maintenance), Moonshots (closed-loop optimization).' },
+        { title: 'Your plant AI roadmap', detail: 'Sequence Quick Wins (vision QC), Strategic Bets (predictive maintenance), Moonshots (closed-loop optimization).' },
       ],
       examples: [
-        { name: 'Run the Use-Case Advisor', detail: 'Use this platform’s agentic advisor with your actual role to produce the course workbook output.' },
+        { name: 'Run the Opportunity Advisor', detail: 'Use this platform’s agentic advisor with your actual role to produce the course workbook output.' },
       ],
     },
     applied: {
       summary:
-        'Navigating the technology landscape with the Three Tiers framework: embedded AI in existing systems, point solutions, and custom builds.',
+        'Navigating the technology landscape across three tiers: embedded AI in existing systems, point solutions, and custom builds.',
       lessons: [
         { title: 'Predictive maintenance in practice', detail: 'Vibration/thermal sensor data to remaining-useful-life models; evaluating Senseye (Siemens), Augury, and SKF offerings.' },
         { title: 'Machine vision for quality', detail: 'Deep-learning inspection with Cognex VisionPro Deep Learning, Landing AI LandingLens, and Instrumental; sample-size and drift realities.' },
         { title: 'Scheduling and process optimization', detail: 'Constraint-based + ML scheduling; process parameter optimization with Bayesian methods.' },
-        { title: 'Implementation lab', detail: 'Score one line for a 30-90 pilot: data audit, vendor shortlist, baseline metric, review gates.' },
+        { title: 'Implementation lab', detail: 'Score one line for a time-boxed pilot: data audit, vendor shortlist, baseline metric, review gates.' },
       ],
       examples: [
         { name: 'Augury at Frito-Lay/PepsiCo', detail: 'Machine-health monitoring publicly credited with eliminating unplanned downtime on monitored lines and adding capacity without capex.' },
@@ -74,16 +74,16 @@ module.exports = [
       ],
     },
     deliverables: [
-      'Plant AI exposure heatmap (from the Use-Case Advisor)',
+      'Plant AI opportunity heatmap (from the Opportunity Advisor)',
       'Quantified problem statement for one line or cell',
-      '30-90 pilot plan with vendor shortlist and baseline metrics',
+      'time-boxed pilot plan with vendor shortlist and baseline metrics',
     ],
   }),
 
   makeModule({
-    id: 'ai-for-operations',
+    id: 'operations',
     number: '05',
-    title: 'AI for Operations',
+    title: 'Operations & Process Automation',
     name: 'Operations',
     track: 'industry',
     tagline: 'Process intelligence, intelligent automation, and the agentic back office.',
@@ -129,7 +129,7 @@ module.exports = [
       lessons: [
         { title: 'Process mining as ground truth', detail: 'Use event logs (Celonis, UiPath Process Mining) to find rework loops and waiting time before guessing at use cases.' },
         { title: 'Scoring the automation portfolio', detail: 'Volume × variance × value framework for ranking candidate processes.' },
-        { title: 'Your operations roadmap', detail: 'Sequence document-heavy Quick Wins, forecasting Sweetspots, and agentic Moonshots.' },
+        { title: 'Your operations roadmap', detail: 'Sequence document-heavy Quick Wins, forecasting Strategic Bets, and agentic Moonshots.' },
       ],
       examples: [
         { name: 'Celonis Process Copilot', detail: 'LLM interface over process-mining data: ask "where is my order-to-cash slowest" in natural language.' },
@@ -141,7 +141,7 @@ module.exports = [
         { title: 'Intelligent document processing', detail: 'Invoices, claims, POs: evaluating Azure Document Intelligence, Google Document AI, and LLM-native extraction.' },
         { title: 'Forecasting stacks', detail: 'Classical + ML ensembles; when gradient boosting beats deep learning; backtesting discipline.' },
         { title: 'Human-in-the-loop design', detail: 'Confidence thresholds, sampling QA, audit trails — the controls that make automation auditable.' },
-        { title: 'Implementation lab', detail: 'Pick one process; define baseline cycle time and error rate; design the 30-90 pilot.' },
+        { title: 'Implementation lab', detail: 'Pick one process; define baseline cycle time and error rate; design the time-boxed pilot.' },
       ],
       examples: [
         { name: 'Klarna’s internal AI shift', detail: 'Beyond the service assistant: company-wide internal assistant adoption changed staffing and cost-to-serve economics.' },
@@ -151,14 +151,14 @@ module.exports = [
     deliverables: [
       'Process-mining-backed shortlist of automation candidates',
       'Exception-handling operating model sketch for one process',
-      '30-90 pilot plan with HITL control design',
+      'time-boxed pilot plan with HITL control design',
     ],
   }),
 
   makeModule({
-    id: 'ai-for-finance',
+    id: 'finance',
     number: '06',
-    title: 'AI for Finance',
+    title: 'Finance & Accounting AI',
     name: 'Finance',
     track: 'industry',
     tagline: 'From scorekeeper to strategic engine: AI across FP&A, accounting, audit, and risk.',
@@ -202,12 +202,12 @@ module.exports = [
     advantage: {
       summary: 'Apply the Use Case and Problem-Based models to your finance org, balancing value against control requirements.',
       lessons: [
-        { title: 'Task mining the finance calendar', detail: 'Close week, forecast cycles, audit prep: decompose and score for AI exposure.' },
+        { title: 'Task mining the finance calendar', detail: 'Close week, forecast cycles, audit prep: decompose and score for AI opportunity.' },
         { title: 'Risk-weighted prioritization', detail: 'Add a control-risk dimension to Value × Ability: assistive first where assertions are at stake.' },
-        { title: 'Your finance AI roadmap', detail: 'Commentary and reconciliation Quick Wins; forecasting Sweetspots; autonomous close Moonshots.' },
+        { title: 'Your finance AI roadmap', detail: 'Commentary and reconciliation Quick Wins; forecasting Strategic Bets; autonomous close Moonshots.' },
       ],
       examples: [
-        { name: 'Run the Use-Case Advisor', detail: 'Generate your finance task heatmap with this platform’s agent as the course exercise.' },
+        { name: 'Run the Opportunity Advisor', detail: 'Generate your finance task heatmap with this platform’s agent as the course exercise.' },
       ],
     },
     applied: {
@@ -231,9 +231,9 @@ module.exports = [
   }),
 
   makeModule({
-    id: 'ai-for-customer-success',
+    id: 'customer-success',
     number: '07',
-    title: 'AI for Customer Success',
+    title: 'Customer Success & Support AI',
     name: 'Customer Success',
     track: 'industry',
     tagline: 'Scale human relationships: AI across support, success, and retention.',
@@ -277,9 +277,9 @@ module.exports = [
     advantage: {
       summary: 'Apply the Use Case and Problem-Based models to your support and success motion.',
       lessons: [
-        { title: 'Decompose the CSM and support roles', detail: 'Score every task — triage, KB authoring, QBR prep, renewal forecasting — for AI exposure.' },
+        { title: 'Decompose the CSM and support roles', detail: 'Score every task — triage, KB authoring, QBR prep, renewal forecasting — for AI opportunity.' },
         { title: 'Problem-first candidates', detail: 'First-response time, cost per ticket, NRR: quantify and match to AI capability.' },
-        { title: 'Your CS AI roadmap', detail: 'KB-grounded agent Quick Wins; conversation-intelligence Sweetspots; predictive-success Moonshots.' },
+        { title: 'Your CS AI roadmap', detail: 'KB-grounded agent Quick Wins; conversation-intelligence Strategic Bets; predictive-success Moonshots.' },
       ],
       examples: [],
     },
@@ -289,7 +289,7 @@ module.exports = [
         { title: 'Grounding and guardrails', detail: 'Knowledge-base quality as the #1 driver of agent performance; escalation design; tone control.' },
         { title: 'Evaluating agent vendors', detail: 'Fin, Forethought, Decagon, Zendesk AI: resolution-rate claims, pricing models, and pilot design.' },
         { title: 'Health scores that drive action', detail: 'Leading indicators, explainable features, and playbooks attached to every alert.' },
-        { title: 'Implementation lab', detail: 'Design a 30-90 agent pilot: scope tier-1 intents, set resolution/CSAT targets, define escalation rules.' },
+        { title: 'Implementation lab', detail: 'Design a time-boxed agent pilot: scope tier-1 intents, set resolution/CSAT targets, define escalation rules.' },
       ],
       examples: [
         { name: 'Decagon', detail: 'AI-native support agents used by Notion, Duolingo, and Rippling, with per-conversation economics.' },
@@ -303,9 +303,9 @@ module.exports = [
   }),
 
   makeModule({
-    id: 'ai-for-sales',
+    id: 'sales',
     number: '08',
-    title: 'AI for Sales',
+    title: 'Sales & Revenue AI',
     name: 'Sales',
     track: 'industry',
     tagline: 'Revenue intelligence, AI SDRs, and the augmented seller.',
@@ -349,9 +349,9 @@ module.exports = [
     advantage: {
       summary: 'Find your revenue AI advantage with the Use Case and Problem-Based models applied to your funnel.',
       lessons: [
-        { title: 'Decompose the selling motion', detail: 'Research, outreach, discovery, proposal, negotiation, handoff: score AI exposure per stage.' },
+        { title: 'Decompose the selling motion', detail: 'Research, outreach, discovery, proposal, negotiation, handoff: score AI opportunity per stage.' },
         { title: 'Problem-first candidates', detail: 'Pipeline coverage, win rate, ramp time, selling-time share: quantify before tooling.' },
-        { title: 'Your sales AI roadmap', detail: 'Call-summary Quick Wins; enrichment/coaching Sweetspots; autonomous outbound Moonshots.' },
+        { title: 'Your sales AI roadmap', detail: 'Call-summary Quick Wins; enrichment/coaching Strategic Bets; autonomous outbound Moonshots.' },
       ],
       examples: [],
     },
@@ -361,23 +361,23 @@ module.exports = [
         { title: 'Choosing the stack', detail: 'Embedded CRM AI vs. point tools (Gong, Clay, Apollo, Outreach) vs. custom agents; integration realities.' },
         { title: 'Personalization that works', detail: 'Research-grounded prompts, human review tiers by account value, deliverability protection.' },
         { title: 'Coaching at scale', detail: 'Scorecards from call data; manager workflows that turn flags into behavior change.' },
-        { title: 'Implementation lab', detail: 'Design a 30-90 pilot on one funnel stage with control-group measurement.' },
+        { title: 'Implementation lab', detail: 'Design a time-boxed pilot on one funnel stage with control-group measurement.' },
       ],
       examples: [
         { name: '11x & Artisan (AI SDRs)', detail: 'Venture-backed autonomous SDR products — study their public case studies and the churn critiques as a balanced evaluation exercise.' },
       ],
     },
     deliverables: [
-      'Funnel-stage AI exposure map',
+      'Funnel-stage AI opportunity map',
       'Personalization prompt pattern library for your ICP',
-      '30-90 pilot with control-group design',
+      'time-boxed pilot with control-group design',
     ],
   }),
 
   makeModule({
-    id: 'ai-for-marketing',
+    id: 'marketing',
     number: '09',
-    title: 'AI for Marketing',
+    title: 'Marketing & Growth AI',
     name: 'Marketing',
     track: 'industry',
     tagline: 'Content velocity, personalization at scale, and marketing in the age of AI search.',
@@ -420,9 +420,9 @@ module.exports = [
     advantage: {
       summary: 'Apply the Use Case and Problem-Based models across the marketing org.',
       lessons: [
-        { title: 'Decompose marketing roles', detail: 'Content, demand gen, product marketing, ops: task-level AI exposure scoring.' },
+        { title: 'Decompose marketing roles', detail: 'Content, demand gen, product marketing, ops: task-level AI opportunity scoring.' },
         { title: 'Problem-first candidates', detail: 'CAC, content cycle time, conversion rates: quantify, then match capability.' },
-        { title: 'Your marketing AI roadmap', detail: 'Drafting/repurposing Quick Wins; personalization Sweetspots; autonomous campaign Moonshots.' },
+        { title: 'Your marketing AI roadmap', detail: 'Drafting/repurposing Quick Wins; personalization Strategic Bets; autonomous campaign Moonshots.' },
       ],
       examples: [],
     },

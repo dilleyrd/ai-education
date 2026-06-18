@@ -1,5 +1,5 @@
 /* ==================================================================
-   AI Academy — editorial engineering-catalog aesthetic
+   AI Roadmap — editorial engineering-catalog aesthetic
    Paper + ink + signal orange. Fraunces display / Spectral body /
    IBM Plex Mono technical labels.
    ================================================================== */
@@ -173,6 +173,11 @@ main { min-height: 70vh; }
   line-height: 1.2;
 }
 .module-row .m-tagline { color: var(--ink-soft); font-size: 15px; margin-top: 2px; }
+.stage-chip {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--signal); border: 1px solid var(--signal); padding: 1px 7px; margin-right: 10px;
+  vertical-align: middle; position: relative; top: -2px;
+}
 .module-row .m-meta {
   font-family: var(--mono); font-size: 11px; color: var(--ink-faint);
   text-align: right; white-space: nowrap; line-height: 1.9;
@@ -554,7 +559,7 @@ table.task-grid td { padding: 9px 10px; border-bottom: 1px dashed var(--line); v
 .pilot .p-head b { font-family: var(--serif); font-size: 18px; font-weight: 600; }
 .pilot-type { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; padding: 3px 9px; }
 .pilot-type.quickWin { background: var(--teal-wash); color: var(--teal); }
-.pilot-type.sweetspot { background: var(--signal-wash); color: var(--signal); }
+.pilot-type.strategicBet { background: var(--signal-wash); color: var(--signal); }
 .pilot-type.moonshot { background: var(--cobalt-wash); color: var(--cobalt); }
 .pilot p { font-size: 15px; color: var(--ink-soft); }
 .pilot .p-tools { font-family: var(--mono); font-size: 12px; margin-top: 8px; color: var(--ink-soft); }

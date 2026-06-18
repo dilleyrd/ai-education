@@ -1,17 +1,17 @@
 const { makeModule } = require('./factory');
 
 /**
- * Engineering & Science track — the custom modules requested in addition to
- * the SmarterX-style business curriculum. Same four-course certificate arc,
- * but the "Applied" course goes deeper on the technical stack (surrogate
- * models, PINNs, ML interatomic potentials, neural operators, etc.) and the
- * real-world implementations are drawn from current tools and published work.
+ * Engineering & Science track — technical modules alongside the business
+ * curriculum. Same four-course progression, but the "Implementation & Tooling"
+ * course goes deeper on the technical stack (surrogate models, PINNs, ML
+ * interatomic potentials, neural operators, etc.) and the real-world
+ * implementations are drawn from current tools and published work.
  */
 module.exports = [
   makeModule({
-    id: 'ai-for-mechanical-design',
+    id: 'mechanical-design',
     number: '15',
-    title: 'AI for Mechanical Engineering Design',
+    title: 'Generative Mechanical Design',
     name: 'Mechanical Design',
     track: 'engineering',
     level: 'Intermediate–Advanced',
@@ -56,9 +56,9 @@ module.exports = [
     advantage: {
       summary: 'Apply the Use Case and Problem-Based models to the design organization, weighted by verification cost.',
       lessons: [
-        { title: 'Decompose the design process', detail: 'Requirements, concept, detailed design, analysis, DFM, documentation: AI exposure scoring per stage.' },
+        { title: 'Decompose the design process', detail: 'Requirements, concept, detailed design, analysis, DFM, documentation: AI opportunity scoring per stage.' },
         { title: 'Problem-first candidates', detail: 'Design-iteration cycle time, mass/cost targets, late DFM rework: quantify before tooling.' },
-        { title: 'Your design AI roadmap', detail: 'Documentation/standards Quick Wins; surrogate-model Sweetspots; generative-design Moonshots.' },
+        { title: 'Your design AI roadmap', detail: 'Documentation/standards Quick Wins; surrogate-model Strategic Bets; generative-design Moonshots.' },
       ],
       examples: [],
     },
@@ -76,16 +76,16 @@ module.exports = [
       ],
     },
     deliverables: [
-      'Design-process AI exposure map',
+      'Design-process AI opportunity map',
       'A validated surrogate model for one component with quantified error bounds',
       'Generative-design study with manufacturability and verification notes',
     ],
   }),
 
   makeModule({
-    id: 'ai-for-thermal-analysis',
+    id: 'thermal-analysis',
     number: '16',
-    title: 'AI for Engineering Thermal Analysis',
+    title: 'ML-Driven Thermal Analysis',
     name: 'Thermal Analysis',
     track: 'engineering',
     level: 'Intermediate–Advanced',
@@ -130,9 +130,9 @@ module.exports = [
     advantage: {
       summary: 'Apply the Use Case and Problem-Based models to thermal engineering workflows.',
       lessons: [
-        { title: 'Decompose the thermal workflow', detail: 'Model build, meshing, solve, post-process, optimize, control: AI exposure scoring per stage.' },
+        { title: 'Decompose the thermal workflow', detail: 'Model build, meshing, solve, post-process, optimize, control: AI opportunity scoring per stage.' },
         { title: 'Problem-first candidates', detail: 'Solve time per design, cooling energy, thermal-margin overdesign: quantify before tooling.' },
-        { title: 'Your thermal AI roadmap', detail: 'Post-processing/reporting Quick Wins; surrogate-sweep Sweetspots; predictive-control Moonshots.' },
+        { title: 'Your thermal AI roadmap', detail: 'Post-processing/reporting Quick Wins; surrogate-sweep Strategic Bets; predictive-control Moonshots.' },
       ],
       examples: [],
     },
@@ -150,16 +150,16 @@ module.exports = [
       ],
     },
     deliverables: [
-      'Thermal-workflow AI exposure map',
+      'Thermal-workflow AI opportunity map',
       'A validated thermal surrogate with error bounds and valid-range documentation',
       'Optimization or control study with full-solver verification of the result',
     ],
   }),
 
   makeModule({
-    id: 'ai-for-fea',
+    id: 'finite-element-analysis',
     number: '17',
-    title: 'AI for Finite-Element Analysis',
+    title: 'Neural Surrogates for Finite-Element Analysis',
     name: 'Finite-Element Analysis',
     track: 'engineering',
     level: 'Advanced',
@@ -204,9 +204,9 @@ module.exports = [
     advantage: {
       summary: 'Apply the Use Case and Problem-Based models to the simulation organization.',
       lessons: [
-        { title: 'Decompose the FEA workflow', detail: 'CAD cleanup, meshing, setup, solve, post-process, report: AI exposure scoring per stage.' },
+        { title: 'Decompose the FEA workflow', detail: 'CAD cleanup, meshing, setup, solve, post-process, report: AI opportunity scoring per stage.' },
         { title: 'Problem-first candidates', detail: 'Solve cost per design study, meshing labor, optimization turnaround: quantify before tooling.' },
-        { title: 'Your simulation AI roadmap', detail: 'Setup/reporting copilot Quick Wins; surrogate-study Sweetspots; learned-solver Moonshots.' },
+        { title: 'Your simulation AI roadmap', detail: 'Setup/reporting copilot Quick Wins; surrogate-study Strategic Bets; learned-solver Moonshots.' },
       ],
       examples: [],
     },
@@ -224,16 +224,16 @@ module.exports = [
       ],
     },
     deliverables: [
-      'FEA-workflow AI exposure map',
+      'FEA-workflow AI opportunity map',
       'A validated FEA surrogate with documented error bounds and trust envelope',
       'A verification protocol for AI-accelerated structural studies',
     ],
   }),
 
   makeModule({
-    id: 'ai-for-cfd',
+    id: 'computational-fluid-dynamics',
     number: '18',
-    title: 'AI for Computational Fluid Dynamics',
+    title: 'ML-Driven Computational Fluid Dynamics',
     name: 'Computational Fluid Dynamics',
     track: 'engineering',
     level: 'Advanced',
@@ -278,9 +278,9 @@ module.exports = [
     advantage: {
       summary: 'Apply the Use Case and Problem-Based models to the CFD organization.',
       lessons: [
-        { title: 'Decompose the CFD workflow', detail: 'Geometry prep, meshing, solver setup, run, post-process, optimize: AI exposure scoring per stage.' },
+        { title: 'Decompose the CFD workflow', detail: 'Geometry prep, meshing, solver setup, run, post-process, optimize: AI opportunity scoring per stage.' },
         { title: 'Problem-first candidates', detail: 'Wall-clock per run, design-cycle turnaround, mesh/setup labor: quantify before tooling.' },
-        { title: 'Your CFD AI roadmap', detail: 'Post-processing/reporting Quick Wins; surrogate early-design Sweetspots; learned-solver/closure Moonshots.' },
+        { title: 'Your CFD AI roadmap', detail: 'Post-processing/reporting Quick Wins; surrogate early-design Strategic Bets; learned-solver/closure Moonshots.' },
       ],
       examples: [],
     },
@@ -298,16 +298,16 @@ module.exports = [
       ],
     },
     deliverables: [
-      'CFD-workflow AI exposure map',
+      'CFD-workflow AI opportunity map',
       'A validated flow-field surrogate or ROM with error bounds on integral quantities',
       'A physical-validation protocol (conservation + experimental anchors) for ML-CFD',
     ],
   }),
 
   makeModule({
-    id: 'ai-for-research-biology',
+    id: 'research-biology',
     number: '19',
-    title: 'AI for Research Biology',
+    title: 'Computational Research Biology',
     name: 'Research Biology',
     track: 'engineering',
     level: 'Intermediate–Advanced',
@@ -352,9 +352,9 @@ module.exports = [
     advantage: {
       summary: 'Apply the Use Case and Problem-Based models to the research workflow, weighted by validation cost.',
       lessons: [
-        { title: 'Decompose the research workflow', detail: 'Literature, hypothesis, experimental design, data analysis, interpretation, writing: AI exposure scoring per stage.' },
+        { title: 'Decompose the research workflow', detail: 'Literature, hypothesis, experimental design, data analysis, interpretation, writing: AI opportunity scoring per stage.' },
         { title: 'Validation-cost weighting', detail: 'An AI result’s value is net of the experiments needed to trust it — prioritize accordingly.' },
-        { title: 'Your research AI roadmap', detail: 'Literature/coding-assistant Quick Wins; structure/omics-analysis Sweetspots; generative-design Moonshots.' },
+        { title: 'Your research AI roadmap', detail: 'Literature/coding-assistant Quick Wins; structure/omics-analysis Strategic Bets; generative-design Moonshots.' },
       ],
       examples: [],
     },
@@ -372,7 +372,7 @@ module.exports = [
       ],
     },
     deliverables: [
-      'Research-workflow AI exposure map with validation-cost weighting',
+      'Research-workflow AI opportunity map with validation-cost weighting',
       'A structure-prediction or design analysis with confidence interpretation',
       'A wet-lab validation plan for one AI-generated hypothesis or molecule',
     ],

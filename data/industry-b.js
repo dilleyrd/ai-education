@@ -2,9 +2,9 @@ const { makeModule } = require('./factory');
 
 module.exports = [
   makeModule({
-    id: 'ai-for-hr',
+    id: 'people-hr',
     number: '10',
-    title: 'AI for HR',
+    title: 'People & HR AI',
     name: 'HR',
     track: 'industry',
     tagline: 'Talent intelligence, augmented HR service delivery — and the compliance line you must not cross.',
@@ -48,9 +48,9 @@ module.exports = [
     advantage: {
       summary: 'Find your HR AI advantage with the Use Case and Problem-Based models, with a compliance overlay on every candidate.',
       lessons: [
-        { title: 'Decompose HR roles', detail: 'Recruiter, HRBP, people-ops: task-level exposure scoring.' },
+        { title: 'Decompose HR roles', detail: 'Recruiter, HRBP, people-ops: task-level opportunity scoring.' },
         { title: 'The compliance overlay', detail: 'Tag every use case: does it influence employment decisions? If yes, audit and disclosure requirements attach.' },
-        { title: 'Your HR AI roadmap', detail: 'Service-delivery Quick Wins; skills-inference Sweetspots; decision-support Moonshots (never decision automation).' },
+        { title: 'Your HR AI roadmap', detail: 'Service-delivery Quick Wins; skills-inference Strategic Bets; decision-support Moonshots (never decision automation).' },
       ],
       examples: [],
     },
@@ -74,9 +74,9 @@ module.exports = [
   }),
 
   makeModule({
-    id: 'ai-for-legal',
+    id: 'legal',
     number: '11',
-    title: 'AI for Legal',
+    title: 'Legal & Compliance AI',
     name: 'Legal',
     track: 'industry',
     tagline: 'Research, review, and drafting transformed — with verification as a professional duty.',
@@ -120,9 +120,9 @@ module.exports = [
     advantage: {
       summary: 'Apply the Use Case and Problem-Based models to the legal function, weighted by risk and verification cost.',
       lessons: [
-        { title: 'Decompose legal work', detail: 'Research, review, drafting, negotiation, counseling: exposure scoring per task.' },
+        { title: 'Decompose legal work', detail: 'Research, review, drafting, negotiation, counseling: opportunity scoring per task.' },
         { title: 'Verification-cost weighting', detail: 'A use case is only valuable net of the checking it requires; model that explicitly.' },
-        { title: 'Your legal AI roadmap', detail: 'Summarization Quick Wins; contract-extraction Sweetspots; negotiation-agent Moonshots.' },
+        { title: 'Your legal AI roadmap', detail: 'Summarization Quick Wins; contract-extraction Strategic Bets; negotiation-agent Moonshots.' },
       ],
       examples: [],
     },
@@ -135,7 +135,7 @@ module.exports = [
         { title: 'Implementation lab', detail: 'Pilot one matter type end-to-end with before/after hour tracking.' },
       ],
       examples: [
-        { name: 'Run the Use-Case Advisor', detail: 'Generate your legal-team task heatmap with this platform’s agent as the course exercise.' },
+        { name: 'Run the Opportunity Advisor', detail: 'Generate your legal-team task heatmap with this platform’s agent as the course exercise.' },
       ],
     },
     deliverables: [
@@ -146,10 +146,10 @@ module.exports = [
   }),
 
   makeModule({
-    id: 'ai-for-software-technology',
+    id: 'software-engineering',
     number: '12',
-    title: 'AI for Software & Technology',
-    name: 'Software & Technology',
+    title: 'Software Engineering & AI',
+    name: 'Software Engineering',
     track: 'industry',
     tagline: 'AI-assisted engineering, agentic coding, and AI-native product strategy.',
     description:
@@ -191,9 +191,9 @@ module.exports = [
     advantage: {
       summary: 'Find your engineering-org AI advantage with the Use Case and Problem-Based models across the SDLC.',
       lessons: [
-        { title: 'Decompose the SDLC', detail: 'Design, implementation, review, testing, deployment, incident response: exposure scoring per stage.' },
+        { title: 'Decompose the SDLC', detail: 'Design, implementation, review, testing, deployment, incident response: opportunity scoring per stage.' },
         { title: 'Problem-first candidates', detail: 'Cycle time, escaped defects, on-call load, onboarding time: quantify before tooling.' },
-        { title: 'Your engineering AI roadmap', detail: 'Assistant rollout Quick Wins; test-generation and review Sweetspots; autonomous-agent Moonshots.' },
+        { title: 'Your engineering AI roadmap', detail: 'Assistant rollout Quick Wins; test-generation and review Strategic Bets; autonomous-agent Moonshots.' },
       ],
       examples: [],
     },
@@ -210,16 +210,16 @@ module.exports = [
       ],
     },
     deliverables: [
-      'SDLC AI exposure map with measurement plan',
+      'SDLC AI opportunity map with measurement plan',
       'AI feature architecture sketch (model, grounding, evals, cost budget)',
       'AI-generated-code governance standard',
     ],
   }),
 
   makeModule({
-    id: 'ai-for-retail-cpg',
+    id: 'retail-cpg',
     number: '13',
-    title: 'AI for Retail & CPG',
+    title: 'Retail & Consumer Goods AI',
     name: 'Retail & CPG',
     track: 'industry',
     tagline: 'Demand sensing, personalization, and the AI-run shelf.',
@@ -263,9 +263,9 @@ module.exports = [
     advantage: {
       summary: 'Find your retail/CPG AI advantage with the Use Case and Problem-Based models.',
       lessons: [
-        { title: 'Decompose the value chain', detail: 'Plan, buy, move, sell, serve: task-level AI exposure by function.' },
+        { title: 'Decompose the value chain', detail: 'Plan, buy, move, sell, serve: task-level AI opportunity by function.' },
         { title: 'Problem-first candidates', detail: 'Out-of-stocks, shrink, markdown loss, content cycle time: quantify and rank.' },
-        { title: 'Your retail AI roadmap', detail: 'Content-generation Quick Wins; forecasting Sweetspots; agentic-commerce Moonshots.' },
+        { title: 'Your retail AI roadmap', detail: 'Content-generation Quick Wins; forecasting Strategic Bets; agentic-commerce Moonshots.' },
       ],
       examples: [],
     },
@@ -275,23 +275,23 @@ module.exports = [
         { title: 'Forecasting and replenishment tooling', detail: 'Blue Yonder, RELEX, o9, and cloud-native builds; backtest discipline and exception design.' },
         { title: 'Personalization platforms', detail: 'Dynamic Yield, Bloomreach, Algolia; identity, consent, and measurement foundations.' },
         { title: 'Store operations AI', detail: 'Computer vision for shelf and shrink; task management from prediction.' },
-        { title: 'Implementation lab', detail: 'Pick one category or banner; design a 30-90 pilot with holdout measurement.' },
+        { title: 'Implementation lab', detail: 'Pick one category or banner; design a time-boxed pilot with holdout measurement.' },
       ],
       examples: [
         { name: 'Starbucks Deep Brew', detail: 'Personalized offers and store-level demand planning in one program — the loyalty-data flywheel in action.' },
       ],
     },
     deliverables: [
-      'Value-chain AI exposure map',
+      'Value-chain AI opportunity map',
       'One quantified problem statement (e.g., OOS rate, content cycle time)',
-      '30-90 pilot with holdout design',
+      'time-boxed pilot with holdout design',
     ],
   }),
 
   makeModule({
-    id: 'ai-for-healthcare',
+    id: 'healthcare',
     number: '14',
-    title: 'AI for Healthcare',
+    title: 'Healthcare & Clinical AI',
     name: 'Healthcare',
     track: 'industry',
     tagline: 'Relieving the administrative burden and augmenting clinical work — under HIPAA and FDA rules.',
@@ -334,9 +334,9 @@ module.exports = [
     advantage: {
       summary: 'Find your healthcare AI advantage: Use Case and Problem-Based models with a risk-tiering overlay (administrative → operational → clinical).',
       lessons: [
-        { title: 'Decompose roles across the system', detail: 'Front desk, coding, nursing, physicians: task exposure scoring.' },
+        { title: 'Decompose roles across the system', detail: 'Front desk, coding, nursing, physicians: task opportunity scoring.' },
         { title: 'Risk tiering', detail: 'Administrative (low) → operational (medium) → clinical decision support (high): sequence accordingly.' },
-        { title: 'Your healthcare AI roadmap', detail: 'Documentation and prior-auth Quick Wins; throughput Sweetspots; predictive-care Moonshots.' },
+        { title: 'Your healthcare AI roadmap', detail: 'Documentation and prior-auth Quick Wins; throughput Strategic Bets; predictive-care Moonshots.' },
       ],
       examples: [],
     },

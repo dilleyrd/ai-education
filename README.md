@@ -156,3 +156,5 @@ public/
 The platform doubles as courseware: `server.js` is the worked example for the
 patterns taught in *AI Essentials* (agents), *Building AI Solutions* (custom
 assistants), and *Software Engineering & AI* (building AI features).
+
+

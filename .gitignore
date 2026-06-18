@@ -1,0 +1,20 @@
+# Secrets — never commit the OpenRouter API key
+.env
+.env.*.local
+
+# Dependencies
+node_modules/
+
+# Learner data (created at runtime by the profiles store)
+storage/
+
+# Tooling / local
+.deepeval/
+*.log
+npm-debug.log*
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
